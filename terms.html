@@ -1,114 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Terms of Service - GetGymRat</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Terms of Service | GetGymRat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GetGymRat Terms of Service" />
+  <style>
+    :root {
+      --bg: #060606;
+      --bg-soft: #0d0d0f;
+      --card: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #f5f5f7;
+      --muted: #a1a1aa;
+      --muted-2: #71717a;
+      --accent: #ffffff;
+      --glow: rgba(255,255,255,0.06);
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(180deg, #0a0a0a, #111);
-  color: #eaeaea;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.container {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 40px 20px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 18%, transparent 40%),
+        linear-gradient(180deg, #050505 0%, #0b0b0d 100%);
+      line-height: 1.7;
+    }
 
-h2 {
-  margin-top: 40px;
-  font-size: 20px;
-  color: #fff;
-}
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
 
-p {
-  color: #bbb;
-  line-height: 1.7;
-}
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(6, 6, 6, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
 
-.card {
-  background: rgba(255,255,255,0.03);
-  padding: 30px;
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.06);
-}
+    .topbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-.header {
-  margin-bottom: 30px;
-}
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
 
-.updated {
-  color: #777;
-  font-size: 14px;
-}
-</style>
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.06)),
+        #111;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 30px rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
 
+    .nav-link {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 72px 24px 32px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 760px;
+    }
+
+    .sub {
+      margin-top: 18px;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .updated {
+      margin-top: 16px;
+      color: var(--muted-2);
+      font-size: 14px;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow:
+        0 10px 40px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: -120px auto auto -120px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, var(--glow), transparent 70%);
+      pointer-events: none;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      padding: 0 0 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .contact-card {
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      color: var(--muted-2);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer a {
+      color: var(--muted);
+    }
+
+    .footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .topbar-inner,
+      .hero,
+      .wrap,
+      .footer {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .panel {
+        padding: 24px 20px;
+        border-radius: 22px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p, li {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark">GR</span>
+        <span>GetGymRat</span>
+      </a>
+      <a class="nav-link" href="/">Back to Home</a>
+    </div>
+  </header>
 
-<div class="container">
+  <section class="hero">
+    <div class="eyebrow">Legal</div>
+    <h1>Terms of Service</h1>
+    <p class="sub">
+      These terms govern your use of GetGymRat across the website, mobile app, premium features, and related services.
+    </p>
+    <div class="updated">Last updated: April 2, 2026</div>
+  </section>
 
-<div class="header">
-<h1>Terms of Service</h1>
-<p class="updated">Last updated: April 2, 2026</p>
-</div>
+  <main class="wrap">
+    <section class="panel">
+      <div class="content">
+        <section class="section">
+          <h2>1. Use of the service</h2>
+          <p>
+            GetGymRat provides fitness-related tools, workout tracking, progress features, and related content for personal and informational use. By using the service, you agree to use it lawfully and in accordance with these Terms.
+          </p>
+        </section>
 
-<div class="card">
+        <section class="section">
+          <h2>2. Eligibility</h2>
+          <p>
+            You must be at least 13 years old, or the minimum age required in your jurisdiction, to use the service.
+          </p>
+        </section>
 
-<p>By using GetGymRat, you agree to these Terms.</p>
+        <section class="section">
+          <h2>3. Accounts</h2>
+          <p>
+            You may need to create an account to access certain features. You are responsible for keeping your login credentials secure, providing accurate information, and all activity that occurs under your account.
+          </p>
+        </section>
 
-<h2>1. Use</h2>
-<p>Fitness tracking for personal use only.</p>
+        <section class="section">
+          <h2>4. Health disclaimer</h2>
+          <p>
+            GetGymRat provides general fitness and wellness information only. It does not provide medical advice, diagnosis, or treatment. You should consult a qualified healthcare professional before starting any exercise, nutrition, or wellness plan, especially if you have pain, injury, or a medical condition.
+          </p>
+          <p>
+            Your use of the app and any decisions you make based on its content are at your own risk.
+          </p>
+        </section>
 
-<h2>2. Eligibility</h2>
-<p>You must be at least 13 years old.</p>
+        <section class="section">
+          <h2>5. Premium subscriptions</h2>
+          <p>
+            Some features may require a paid subscription. By purchasing premium access, you agree to the pricing shown at the time of purchase. Subscriptions may renew automatically unless cancelled through the platform used to subscribe, such as Apple App Store or Google Play, unless otherwise stated.
+          </p>
+        </section>
 
-<h2>3. Accounts</h2>
-<p>You are responsible for your account security.</p>
+        <section class="section">
+          <h2>6. Acceptable use</h2>
+          <ul>
+            <li>You may not use the service for unlawful purposes</li>
+            <li>You may not attempt unauthorized access to systems or data</li>
+            <li>You may not interfere with the operation or security of the service</li>
+            <li>You may not copy, reverse engineer, resell, or exploit the service except where permitted by law</li>
+            <li>You may not upload harmful, abusive, or malicious content</li>
+          </ul>
+        </section>
 
-<h2>4. Health disclaimer</h2>
-<p>This is not medical advice. Use at your own risk.</p>
+        <section class="section">
+          <h2>7. Intellectual property</h2>
+          <p>
+            All content, branding, design, features, logos, text, graphics, and software related to GetGymRat are owned by or licensed to us and are protected by applicable intellectual property laws.
+          </p>
+        </section>
 
-<h2>5. Subscriptions</h2>
-<p>Premium features may require payment and auto-renew.</p>
+        <section class="section">
+          <h2>8. User content</h2>
+          <p>
+            If you submit content such as workout logs, profile data, or other entries, you retain ownership of your content. You grant us a limited right to use, store, and process that content solely to operate, maintain, and improve the service.
+          </p>
+        </section>
 
-<h2>6. Acceptable use</h2>
-<p>No misuse, hacking, or illegal activity.</p>
+        <section class="section">
+          <h2>9. Availability</h2>
+          <p>
+            We aim to keep the service available and working well, but we do not guarantee uninterrupted, secure, or error-free access. We may modify, suspend, or discontinue parts of the service at any time.
+          </p>
+        </section>
 
-<h2>7. Ownership</h2>
-<p>All content belongs to GetGymRat.</p>
+        <section class="section">
+          <h2>10. Disclaimer of warranties and limitation of liability</h2>
+          <p>
+            The service is provided on an “as is” and “as available” basis to the fullest extent permitted by law. We do not guarantee that the service will be uninterrupted, accurate, or free from errors.
+          </p>
+          <p>
+            To the fullest extent permitted by law, GetGymRat and its operators are not liable for indirect, incidental, special, consequential, or punitive damages, or for loss of data, profits, or business arising from use of the service.
+          </p>
+        </section>
 
-<h2>8. User content</h2>
-<p>You own your data, we use it to operate the service.</p>
+        <section class="section">
+          <h2>11. Termination</h2>
+          <p>
+            We may suspend or terminate access to the service if these Terms are violated or if necessary to protect the service, users, or legal rights.
+          </p>
+        </section>
 
-<h2>9. Availability</h2>
-<p>No guarantee of uptime.</p>
+        <section class="section">
+          <h2>12. Changes to these terms</h2>
+          <p>
+            We may update these Terms from time to time. When we do, we will update the “Last updated” date on this page. Continued use of the service means you accept the updated Terms.
+          </p>
+        </section>
 
-<h2>10. Liability</h2>
-<p>We are not responsible for damages.</p>
+        <section class="section">
+          <h2>13. Contact</h2>
+          <p>
+            For questions regarding these Terms, please contact:
+          </p>
+          <a class="contact-card" href="mailto:hello@getgymrat.com">hello@getgymrat.com</a>
+        </section>
+      </div>
+    </section>
+  </main>
 
-<h2>11. Termination</h2>
-<p>Accounts may be suspended if rules are broken.</p>
-
-<h2>12. Changes</h2>
-<p>Terms may be updated.</p>
-
-<h2>13. Contact</h2>
-<p>hello@getgymrat.com</p>
-
-</div>
-
-</div>
-
+  <footer class="footer">
+    <span>© 2026 GetGymRat / LevelUp Labs</span>
+    <span>
+      <a href="/privacy.html">Privacy Policy</a> ·
+      <a href="/terms.html">Terms of Service</a>
+    </span>
+  </footer>
 </body>
 </html>
